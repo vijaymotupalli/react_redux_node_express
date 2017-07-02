@@ -3,11 +3,18 @@ import path from 'path';
 
 import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackconfig from '../webpack.config.dev';
 
 let app = express()
 
-app.use(webpackMiddleware(webpack(webpackconfig)));
+const compiler = webpack(webpackconfig)
+app.use(webpackMiddleware(compiler,{
+    hot:true,
+    publicPath:webpackconfig.output.publicPath,
+    noInfo:true
+}));
+app.use(webpackHotMiddleware(compiler));
 
 app.get('/*' ,(req,res)=>{
 

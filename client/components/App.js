@@ -3,9 +3,14 @@
  */
 
 import React from 'react'
+import Greeting from './greeting'
 
-export default ()=>{
-    return(
-        <h1>Welcome from react</h1>
-    )
+class App extends React.Component {
+    render(){
+        return(
+            <Greeting />
+        )
+    }
 }
+
+export default App
