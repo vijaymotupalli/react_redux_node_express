@@ -21,4 +21,4 @@ app.get('/*' ,(req,res)=>{
     res.sendFile(path.join(__dirname,'./index.html'));
 })
 
-app.listen(3000,()=>console.log("server running at 3000"));
+app.listen(7000,()=>console.log("server running at 7000"));

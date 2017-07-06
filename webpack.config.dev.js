@@ -21,10 +21,7 @@ export default{
                 loader: ["react-hot-loader","babel-loader"]
 
             },
-            {
-                test: /\.css$/,
-                loader: 'style!css!sass?outputStyle=expanded',
-            }
+            { test: /\.css$/, loader: "style-loader!css-loader" }
         ]
     }
 

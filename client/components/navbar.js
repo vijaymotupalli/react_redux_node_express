@@ -7,11 +7,14 @@ export default ()=>{
           <nav className="navbar navbar-default">
               <div className="container-fluid">
                   <div className="navbar-header">
-                      <Link to="/" className="navbar-brand">Brand</Link>
+                      <Link to="/" className="navbar-brand">Home</Link>
                   </div>
                   <div >
                       <ul className="nav navbar-nav">
                           <Link to="/about" className="navbar-brand">About</Link>
+                      </ul>
+                      <ul className="nav navbar-nav">
+                          <Link to="/timetracker" className="navbar-brand">TimeTracking</Link>
                       </ul>
                       <ul className="nav navbar-nav navbar-right">
                           <Link to="/signup" className="navbar-brand">Signup</Link>
