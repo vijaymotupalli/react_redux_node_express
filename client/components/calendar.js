@@ -138,65 +138,34 @@ class Calendar extends React.Component {
     render() {
 
         const styles = {
-            position: 'relative',
-        };
+            position: "relative",
+        padding: 20,
+        margin: 20
+    };
 
         return (
-            <div style={styles}>
-
-                <Overlay
-                    show={this.state.showPopover}
-                    rootClose
-                    onHide = {()=>this.setState({showPopover: false, })}
-                    placement="top"
-                    container={this}
-                    target={this.state.popoverTarget}>
-                    <Popover id="event">{this.state.overlayTitle}</Popover>
-                </Overlay>
-
-                <Modal show={this.state.showModal} onHide={this.handleModalClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>{this.state.overlayTitle}</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        {this.state.overlayContent}
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button onClick={this.handleModalClose}>Close</Button>
-                    </Modal.Footer>
-                </Modal>
-
-                <Grid>
-                    <Row>
-                        <Col xs={6}>
-                            <ButtonToolbar>
-                                <Button onClick={this.handlePreviousMonth}>&lt;</Button>
-                                <Button onClick={this.handleNextMonth}>&gt;</Button>
-                                <Button onClick={this.handleToday}>Today</Button>
-                                <span className="pull-right h2">{this.getHumanDate()}</span>
-                            </ButtonToolbar>
-
-                        </Col>
-                        {/*<Col xs={3}>*/}
-                            {/*<div className="pull-right h2">{this.getHumanDate()}</div>*/}
-                        {/*</Col>*/}
-                    </Row>
-                    <br />
-                    <Row>
-                        <Col xs={12}>
-                            <EventCalendar
-                                month={this.state.moment.month()}
-                                year={this.state.moment.year()}
-                                events={this.state.getEvents}
-                                onEventClick={this.handleEventClick}
-                                onEventMouseOver={this.handleEventMouseOver}
-                                onEventMouseOut={this.handleEventMouseOut}
-                                onDayClick={this.handleDayClick}
-                                maxEventSlots={1}
-                            />
-                        </Col>
-                    </Row>
-                </Grid>
+            <div >
+                <div style={{ fontSize: "-webkit-xxx-large",
+                    textAlign: "center",
+                    fontFamily: "cursive"}}>Time Tracking</div>
+                <div className="test" style={styles}>
+                    <ButtonToolbar>
+                        <Button onClick={this.handlePreviousMonth}>&lt;</Button>
+                        <Button onClick={this.handleNextMonth}>&gt;</Button>
+                        <Button onClick={this.handleToday}>Today</Button>
+                        <span className="pull-right h2">{this.getHumanDate()}</span>
+                    </ButtonToolbar>
+                    <EventCalendar
+                        month={this.state.moment.month()}
+                        year={this.state.moment.year()}
+                        events={this.state.getEvents}
+                        onEventClick={this.handleEventClick}
+                        onEventMouseOver={this.handleEventMouseOver}
+                        onEventMouseOut={this.handleEventMouseOut}
+                        onDayClick={this.handleDayClick}
+                        maxEventSlots={1}
+                    />
+                </div>
 
             </div>
         );
